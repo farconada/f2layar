@@ -44,6 +44,7 @@ class Tx_F2layar_Controller_PoiController extends Tx_Extbase_MVC_Controller_Acti
 			$this->flashMessageContainer->add('No storagePid! You have to include the static template of this extension and set the constant plugin.tx_' . t3lib_div::lcfirst($this->extensionName) . '.persistence.storagePid in the constant editor');
 		}
 		$this->view->assign('pois', $pois);
+        var_dump(t3lib_div::_GET('lat'));
 	}
 
 }

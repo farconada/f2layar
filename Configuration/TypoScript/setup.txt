@@ -6,11 +6,11 @@ poiJson {
   }
 
   config {
-    disableAllHeaderCode = 0
+    disableAllHeaderCode = 1
     additionalHeaders = Content-type:application/json
     xhtml_cleaning = 0
     admPanel = 0
-    debug = 1
+    debug = 0
   }
 
 }
