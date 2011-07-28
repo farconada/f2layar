@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'f2layar'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_f2layar_domain_model_poi">Poi</label>
+			<label index="tx_f2layar_domain_model_poi.title">Title</label>
+			<label index="tx_f2layar_domain_model_poi.atttribution">Atttribution</label>
+			<label index="tx_f2layar_domain_model_poi.latitude">Latitude</label>
+			<label index="tx_f2layar_domain_model_poi.longitude">Longitude</label>
+			<label index="tx_f2layar_domain_model_poi.image">Image</label>
+			<label index="tx_f2layar_domain_model_poi.line2">Line2</label>
+			<label index="tx_f2layar_domain_model_poi.line3">Line3</label>
+			<label index="tx_f2layar_domain_model_poi.line4">Line4</label>
+			<label index="tx_f2layar_domain_model_poi.type">Type</label>
+			<label index="tx_f2layar_domain_model_poi.dimension">Dimension</label>
+			<label index="tx_f2layar_domain_model_poi.alt">Alt</label>
+			<label index="tx_f2layar_domain_model_poi.relativealt">Relativealt</label>
+			<label index="tx_f2layar_domain_model_poi.distance">Distance</label>
+			<label index="tx_f2layar_domain_model_poi.infocus">Infocus</label>
+			<label index="tx_f2layar_domain_model_poi.donotindex">Donotindex</label>
+			<label index="tx_f2layar_domain_model_poi.showsmallbiw">Showsmallbiw</label>
+			<label index="tx_f2layar_domain_model_poi.showbiwonclick">Showbiwonclick</label>
+            <label index="tx_f2layar_domain_model_poi.map">Seleccione un punto en el mapa</label>
+		</languageKey>
+	</data>
+</T3locallang>

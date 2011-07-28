@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<description>Context Sensitive Help (CSH) for table tx_f2layar_domain_model_poi</description>
+		<type>CSH</type>
+		<csh_table>tx_f2layar_domain_model_poi</csh_table>
+	</meta>
+	<data type="array">
+	<languageKey index="default" type="array">
+			<label index="title.description">title</label>
+			<label index="atttribution.description">atttribution</label>
+			<label index="latitude.description">Latitude</label>
+			<label index="longitude.description">Longitude</label>
+			<label index="image.description">image</label>
+			<label index="line2.description">line2</label>
+			<label index="line3.description">line3</label>
+			<label index="line4.description">line4</label>
+			<label index="type.description">type</label>
+			<label index="dimension.description">dimension</label>
+			<label index="alt.description">alt</label>
+			<label index="relativealt.description">relativealt</label>
+			<label index="distance.description">distance</label>
+			<label index="infocus.description">infocus</label>
+			<label index="donotindex.description">donotindex</label>
+			<label index="showsmallbiw.description">showsmallbiw</label>
+			<label index="showbiwonclick.description">showbiwonclick</label>
+		</languageKey>
+	</data>
+</T3locallang>

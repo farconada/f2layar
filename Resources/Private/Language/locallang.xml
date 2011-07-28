@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for the Layar POI Server extension in the FRONTEND</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_f2layar_domain_model_poi">Layar POIs</label>
+			<label index="tx_f2layar_domain_model_poi.title">title</label>
+			<label index="tx_f2layar_domain_model_poi.atttribution">atttribution</label>
+			<label index="tx_f2layar_domain_model_poi.latitude">Latitude</label>
+			<label index="tx_f2layar_domain_model_poi.longitude">Longitude</label>
+			<label index="tx_f2layar_domain_model_poi.image">image</label>
+			<label index="tx_f2layar_domain_model_poi.line2">line2</label>
+			<label index="tx_f2layar_domain_model_poi.line3">line3</label>
+			<label index="tx_f2layar_domain_model_poi.line4">line4</label>
+			<label index="tx_f2layar_domain_model_poi.type">type</label>
+			<label index="tx_f2layar_domain_model_poi.dimension">dimension</label>
+			<label index="tx_f2layar_domain_model_poi.alt">alt</label>
+			<label index="tx_f2layar_domain_model_poi.relativealt">relativealt</label>
+			<label index="tx_f2layar_domain_model_poi.distance">distance</label>
+			<label index="tx_f2layar_domain_model_poi.infocus">infocus</label>
+			<label index="tx_f2layar_domain_model_poi.donotindex">donotindex</label>
+			<label index="tx_f2layar_domain_model_poi.showsmallbiw">showsmallbiw</label>
+			<label index="tx_f2layar_domain_model_poi.showbiwonclick">showbiwonclick</label>
+		</languageKey>
+	</data>
+</T3locallang>

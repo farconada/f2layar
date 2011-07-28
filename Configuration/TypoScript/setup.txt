@@ -1,0 +1,29 @@
+poiJson = PAGE
+poiJson {
+  typeNum = 1311873087
+  10 = USER
+  10 {
+    userFunc = tx_extbase_dispatcher->dispatch
+    pluginName = POIserver
+    extensionName = F2layar
+    controller = Poi
+    action = list
+    switchableControllerActions {
+        1 {
+            controller = Poi
+            actions = list
+        }
+    }
+    settings =< plugin.tx_yag.settings
+    persistence =< plugin.tx_yag.persistence
+    view =< plugin.tx_yag.view
+  }
+
+  config {
+    disableAllHeaderCode = 1
+    additionalHeaders = Content-type:application/json
+    xhtml_cleaning = 0
+    admPanel = 0
+  }
+
+}
