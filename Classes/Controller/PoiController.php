@@ -32,8 +32,29 @@
  *
  */
 class Tx_F2layar_Controller_PoiController extends Tx_Extbase_MVC_Controller_ActionController {
+    protected function initializeAction()
+    {
+        parent::initializeAction();
+        $params = array(
+            'layerName' => 'layer',
+            'userID' => 'user',
+            'developerId' => 'dev',
+            'developerHash' => 'hash',
+            'timestamp' => 'timestamp',
+            'lat' => 'latitude',
+            'lon' => 'longitude',
+            'radius' => 'range',
+            'pageKey' => 'pageKey',
+            'lang' => 'language',
+            'accuracy' => 'accuracy',
+        );
+        foreach ($params as $layarVar => $internalVar){
+            $this->request->setArgument($internalVar,t3lib_div::_GET($layarVar));
+        }
+    }
 
-	/**
+
+    /**
 	 * action list
 	 *
 	 * @return string The rendered list action
@@ -43,8 +64,9 @@ class Tx_F2layar_Controller_PoiController extends Tx_Extbase_MVC_Controller_Acti
 		if(empty($configuration['persistence']['storagePid'])){
 			$this->flashMessageContainer->add('No storagePid! You have to include the static template of this extension and set the constant plugin.tx_' . t3lib_div::lcfirst($this->extensionName) . '.persistence.storagePid in the constant editor');
 		}
+        
 		$this->view->assign('pois', $pois);
-        var_dump(t3lib_div::_GET('lat'));
+        var_dump($this->request->getArguments());
 	}
 
 }
