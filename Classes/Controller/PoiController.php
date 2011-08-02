@@ -32,6 +32,20 @@
  *
  */
 class Tx_F2layar_Controller_PoiController extends Tx_Extbase_MVC_Controller_ActionController {
+    /**
+     * @var Tx_F2layar_Domain_Repository_PoiRepository
+     */
+    protected $poiRepository;
+
+    /**
+     * DI
+     * @param Tx_F2layar_Domain_Repository_PoiRepository $repository
+     * @return void
+     */
+    public function injectPoiRepository(Tx_F2layar_Domain_Repository_PoiRepository $repository) {
+        $this->poiRepository = $repository;
+    }
+
     protected function initializeAction()
     {
         parent::initializeAction();
@@ -64,9 +78,11 @@ class Tx_F2layar_Controller_PoiController extends Tx_Extbase_MVC_Controller_Acti
 		if(empty($configuration['persistence']['storagePid'])){
 			$this->flashMessageContainer->add('No storagePid! You have to include the static template of this extension and set the constant plugin.tx_' . t3lib_div::lcfirst($this->extensionName) . '.persistence.storagePid in the constant editor');
 		}
-        
+
+        $pois = $this->poiRepository->findAll();
 		$this->view->assign('pois', $pois);
         var_dump($this->request->getArguments());
+        var_dump($pois);
 	}
 
 }

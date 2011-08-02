@@ -31,7 +31,7 @@
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License, version 3 or later
  *
  */
-class Tx_F2layar_Domain_Model_Poi extends Tx_Extbase_DomainObject_AbstractEntity {
+class Tx_F2layar_Domain_Model_PoiRepository extends Tx_Extbase_DomainObject_AbstractEntity {
 
 	/**
 	 * title
