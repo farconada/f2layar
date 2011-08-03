@@ -8,8 +8,8 @@ CREATE TABLE tx_f2layar_domain_model_poi (
 
 	title varchar(255) DEFAULT '' NOT NULL,
 	atttribution varchar(255) DEFAULT '' NOT NULL,
-	latitude varchar(255) DEFAULT '' NOT NULL,
-	longitude varchar(255) DEFAULT '' NOT NULL,
+	latitude float NOT NULL,
+	longitude float NOT NULL,
 	image text NOT NULL,
 	line2 varchar(255) DEFAULT '' NOT NULL,
 	line3 varchar(255) DEFAULT '' NOT NULL,

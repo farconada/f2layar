@@ -63,7 +63,11 @@ class Tx_F2layar_Controller_PoiController extends Tx_Extbase_MVC_Controller_Acti
             'accuracy' => 'accuracy',
         );
         foreach ($params as $layarVar => $internalVar){
-            $this->request->setArgument($internalVar,t3lib_div::_GET($layarVar));
+            if(!t3lib_div::_GET($layarVar)){
+                $this->request->setArgument($internalVar,0);
+            } else {
+                $this->request->setArgument($internalVar,t3lib_div::_GET($layarVar));
+            }
         }
     }
 
@@ -78,11 +82,17 @@ class Tx_F2layar_Controller_PoiController extends Tx_Extbase_MVC_Controller_Acti
 		if(empty($configuration['persistence']['storagePid'])){
 			$this->flashMessageContainer->add('No storagePid! You have to include the static template of this extension and set the constant plugin.tx_' . t3lib_div::lcfirst($this->extensionName) . '.persistence.storagePid in the constant editor');
 		}
+        
+        $pois = $this->poiRepository->findPoisInPosition($this->request->getArgument('longitude'),
+                                                         $this->request->getArgument('latitude'),
+                                                         $this->request->getArgument('range')
+        );
+        foreach ($pois as $poi) {
+            var_dump($poi->getTitle());
+        }
 
-        $pois = $this->poiRepository->findAll();
 		$this->view->assign('pois', $pois);
         var_dump($this->request->getArguments());
-        var_dump($pois);
 	}
 
 }

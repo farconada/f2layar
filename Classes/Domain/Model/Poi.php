@@ -31,7 +31,7 @@
  * @license http://www.gnu.org/licenses/lgpl.html GNU Lesser General Public License, version 3 or later
  *
  */
-class Tx_F2layar_Domain_Model_PoiRepository extends Tx_Extbase_DomainObject_AbstractEntity {
+class Tx_F2layar_Domain_Model_Poi extends Tx_Extbase_DomainObject_AbstractEntity {
 
 	/**
 	 * title
@@ -51,7 +51,7 @@ class Tx_F2layar_Domain_Model_PoiRepository extends Tx_Extbase_DomainObject_Abst
 	/**
 	 * Latitude
 	 *
-	 * @var string
+	 * @var float
 	 * @validate NotEmpty
 	 */
 	protected $latitude;
@@ -59,7 +59,7 @@ class Tx_F2layar_Domain_Model_PoiRepository extends Tx_Extbase_DomainObject_Abst
 	/**
 	 * Longitude
 	 *
-	 * @var string
+	 * @var float
 	 * @validate NotEmpty
 	 */
 	protected $longitude;
@@ -207,7 +207,7 @@ class Tx_F2layar_Domain_Model_PoiRepository extends Tx_Extbase_DomainObject_Abst
 	/**
 	 * Returns the latitude
 	 *
-	 * @return string $latitude
+	 * @return float $latitude
 	 */
 	public function getLatitude() {
 		return $this->latitude;
@@ -227,7 +227,7 @@ class Tx_F2layar_Domain_Model_PoiRepository extends Tx_Extbase_DomainObject_Abst
 	/**
 	 * Returns the longitude
 	 *
-	 * @return string $longitude
+	 * @return float $longitude
 	 */
 	public function getLongitude() {
 		return $this->longitude;
