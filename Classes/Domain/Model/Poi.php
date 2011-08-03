@@ -42,16 +42,16 @@ class Tx_F2layar_Domain_Model_Poi extends Tx_Extbase_DomainObject_AbstractEntity
 	protected $title;
 
 	/**
-	 * atttribution
+	 * attribution
 	 *
 	 * @var string
 	 */
-	protected $atttribution;
+	protected $attribution;
 
 	/**
 	 * Latitude
 	 *
-	 * @var float
+	 * @var string
 	 * @validate NotEmpty
 	 */
 	protected $latitude;
@@ -59,7 +59,7 @@ class Tx_F2layar_Domain_Model_Poi extends Tx_Extbase_DomainObject_AbstractEntity
 	/**
 	 * Longitude
 	 *
-	 * @var float
+	 * @var string
 	 * @validate NotEmpty
 	 */
 	protected $longitude;
@@ -185,29 +185,29 @@ class Tx_F2layar_Domain_Model_Poi extends Tx_Extbase_DomainObject_AbstractEntity
 	}
 
 	/**
-	 * Returns the atttribution
+	 * Returns the attribution
 	 *
-	 * @return string $atttribution
+	 * @return string $attribution
 	 */
-	public function getAtttribution() {
-		return $this->atttribution;
+	public function getAttribution() {
+		return $this->attribution;
 	}
 
 	/**
-	 * Sets the atttribution
+	 * Sets the attribution
 	 *
-	 * @param string $atttribution
+	 * @param string $attribution
 	 * @return void
 	 */
-	public function setAtttribution($atttribution) {
-		$this->atttribution = $atttribution;
+	public function setAttribution($attribution) {
+		$this->attribution = $attribution;
 		return $this;
 	}
 
 	/**
 	 * Returns the latitude
 	 *
-	 * @return float $latitude
+	 * @return string $latitude
 	 */
 	public function getLatitude() {
 		return $this->latitude;
@@ -227,7 +227,7 @@ class Tx_F2layar_Domain_Model_Poi extends Tx_Extbase_DomainObject_AbstractEntity
 	/**
 	 * Returns the longitude
 	 *
-	 * @return float $longitude
+	 * @return string $longitude
 	 */
 	public function getLongitude() {
 		return $this->longitude;

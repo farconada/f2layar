@@ -87,12 +87,37 @@ class Tx_F2layar_Controller_PoiController extends Tx_Extbase_MVC_Controller_Acti
                                                          $this->request->getArgument('latitude'),
                                                          $this->request->getArgument('range')
         );
+
+        $poisArray = array();
+        $i = 0;
         foreach ($pois as $poi) {
-            var_dump($poi->getTitle());
+            $poisArray[$i]['distance'] = 0;
+            $poisArray[$i]['attribution'] = $poi->getAttribution();
+            $poisArray[$i]['title'] = $poi->getTitle();
+            $poisArray[$i]['lon'] = $poi->getLongitude() * 100000;
+            $poisArray[$i]['lat'] = $poi->getLatitude() * 100000;
+            $poisArray[$i]['type'] = $poi->getType();
+            $poisArray[$i]['imageUrl'] = '';
+            $poisArray[$i]['line2'] = $poi->getLine2();
+            $poisArray[$i]['line3'] = $poi->getLine3();
+            $poisArray[$i]['line4'] = $poi->getLine4();
+            $poisArray[$i]['id'] = $poi->getUid();
+            $poisArray[$i]['actions'] = array();
+
+
+            $i++;
         }
 
 		$this->view->assign('pois', $pois);
-        var_dump($this->request->getArguments());
+        $output['hotspots'] = $poisArray;
+        $output['layer'] = $this->request->getArgument('layer');
+        $output['errorString'] = 'OK';
+        $output['morePages'] = false;
+        $output['errorCode'] = 0;
+        $output['nextPageKey'] = NULL;
+
+        
+        return json_encode($output);
 	}
 
 }
