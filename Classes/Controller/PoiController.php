@@ -94,8 +94,8 @@ class Tx_F2layar_Controller_PoiController extends Tx_Extbase_MVC_Controller_Acti
             $poisArray[$i]['distance'] = 0;
             $poisArray[$i]['attribution'] = $poi->getAttribution();
             $poisArray[$i]['title'] = $poi->getTitle();
-            $poisArray[$i]['lon'] = $poi->getLongitude() * 100000;
-            $poisArray[$i]['lat'] = $poi->getLatitude() * 100000;
+            $poisArray[$i]['lon'] = $poi->getLongitude() * 1000000;
+            $poisArray[$i]['lat'] = $poi->getLatitude() * 1000000;
             $poisArray[$i]['type'] = $poi->getType();
             $poisArray[$i]['imageUrl'] = '';
             $poisArray[$i]['line2'] = $poi->getLine2();

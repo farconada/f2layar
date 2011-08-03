@@ -2,9 +2,14 @@ poiJson = PAGE
 poiJson {
   typeNum = 1311873087
   10 = USER_INT
-  10 < tt_content.list.20.f2layar_poiserver
-  10.persistence.storagePid = 1
+  10 {
+        userFunc = tx_extbase_core_bootstrap->run
+        persistence.storagePid = 1
+        extensionName = F2layar
+        pluginName = POIserver
+        
   }
+}
 
   config {
     disableAllHeaderCode = 1
@@ -13,5 +18,3 @@ poiJson {
     admPanel = 0
     debug = 0
   }
-
-}
