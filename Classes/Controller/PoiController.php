@@ -38,6 +38,14 @@ class Tx_F2layar_Controller_PoiController extends Tx_Extbase_MVC_Controller_Acti
     protected $poiRepository;
 
     /**
+     * @param Tx_F2layar_view_LayarResponse $view
+     * @return void
+     */
+    public function injectLayarResponseView(Tx_F2layar_View_LayarResponse $view) {
+        $this->view = $view;
+    }
+
+    /**
      * DI
      * @param Tx_F2layar_Domain_Repository_PoiRepository $repository
      * @return void
@@ -45,6 +53,16 @@ class Tx_F2layar_Controller_PoiController extends Tx_Extbase_MVC_Controller_Acti
     public function injectPoiRepository(Tx_F2layar_Domain_Repository_PoiRepository $repository) {
         $this->poiRepository = $repository;
     }
+
+    protected function resolveView()
+    {
+
+        $view = $this->objectManager->create('Tx_F2layar_View_LayarResponse');
+        $view->initializeView();
+        $view->assign('settings', $this->settings);
+        return $view;
+    }
+
 
     protected function initializeAction()
     {
@@ -88,36 +106,25 @@ class Tx_F2layar_Controller_PoiController extends Tx_Extbase_MVC_Controller_Acti
                                                          $this->request->getArgument('range')
         );
 
-        $poisArray = array();
-        $i = 0;
-        foreach ($pois as $poi) {
-            $poisArray[$i]['distance'] = 0;
-            $poisArray[$i]['attribution'] = $poi->getAttribution();
-            $poisArray[$i]['title'] = $poi->getTitle();
-            $poisArray[$i]['lon'] = $poi->getLongitude() * 1000000;
-            $poisArray[$i]['lat'] = $poi->getLatitude() * 1000000;
-            $poisArray[$i]['type'] = $poi->getType();
-            $poisArray[$i]['imageUrl'] = '';
-            $poisArray[$i]['line2'] = $poi->getLine2();
-            $poisArray[$i]['line3'] = $poi->getLine3();
-            $poisArray[$i]['line4'] = $poi->getLine4();
-            $poisArray[$i]['id'] = $poi->getUid();
-            $poisArray[$i]['actions'] = array();
-
-
-            $i++;
-        }
-
 		$this->view->assign('pois', $pois);
-        $output['hotspots'] = $poisArray;
-        $output['layer'] = $this->request->getArgument('layer');
-        $output['errorString'] = 'OK';
-        $output['morePages'] = false;
-        $output['errorCode'] = 0;
-        $output['nextPageKey'] = NULL;
+        $this->view->assign('layer',$this->request->getArgument('layer'));
 
-        
-        return json_encode($output);
+	}
+
+    /**
+	 * Initializes the view before invoking an action method.
+	 *
+	 * Override this method to solve assign variables common for all actions
+	 * or prepare the view in another way before the action is called.
+	 *
+	 * @param Tx_Extbase_View_ViewInterface $view The view to be initialized
+	 * @return void
+	 * @api
+	 */
+	protected function initializeView(Tx_Extbase_MVC_View_ViewInterface $view) {
+           $this->view->assign('layer',$this->request->getArgument('layer'));
+           $this->view->assign('my-longitude',$this->request->getArgument('longitude'));
+           $this->view->assign('my-latitude',$this->request->getArgument('latitude'));
 	}
 
 }
